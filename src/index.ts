@@ -35,7 +35,7 @@ createConnection().then(async connection => {
     await connection.manager.save(connection.manager.create(User, {
         firstName: "Timber",
         lastName: "Saw",
-        age: 27
+        age: 278
     }));
     await connection.manager.save(connection.manager.create(User, {
         firstName: "Phantom",
