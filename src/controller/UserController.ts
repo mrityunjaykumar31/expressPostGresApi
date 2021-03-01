@@ -21,11 +21,10 @@ export class UserController {
     async remove(request: Request, response: Response, next: NextFunction) {
         try {
             console.log(request.params.id)
-        let userToRemove = await this.userRepository.findOne(request.params.id);
+            let userToRemove = await this.userRepository.findOne(request.params.id);
 
-        await this.userRepository.remove(userToRemove);
-
-           response.status(200).json( request.params.id + " Deleted ")  
+            await this.userRepository.remove(userToRemove);
+            response.status(200).json( request.params.id + " Deleted ")  
         } catch (error) {
             response.status(400).json({ error: error.message }); 
         }
